@@ -1,73 +1,162 @@
-# Welcome to your Lovable project
+# 🏋️‍♂️ Personal Trainer - Sistema de Planos e Preços
 
-## Project info
+Um sistema completo e moderno para apresentação de pacotes de Personal Training, com funcionalidades avançadas de comparação, avaliação personalizada e integração com WhatsApp.
 
-**URL**: https://lovable.dev/projects/aec4de09-80a6-4f93-9900-b0f26bc1a277
+## ✨ Funcionalidades
 
-## How can I edit this code?
+### 📊 **Apresentação de Pacotes**
+- Cards responsivos com detalhes de cada plano
+- Preços por sessão e valores totais
+- Opções de parcelamento destacadas
+- Badges personalizados para cada categoria
 
-There are several ways of editing your application.
+### ⚖️ **Comparador de Planos**
+- Comparação lado a lado entre dois planos quaisquer
+- Cálculo automático de economia
+- Análise de custo-benefício
+- Destaque do melhor plano
 
-**Use Lovable**
+### 🎯 **Avaliação Personalizada**
+- Quiz interativo de 5 perguntas
+- Recomendação automática baseada no perfil
+- Sugestão do plano ideal com justificativa
+- Sistema de progressão visual
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/aec4de09-80a6-4f93-9900-b0f26bc1a277) and start prompting.
+### 📱 **Integração WhatsApp**
+- Botões diretos em cada plano
+- Mensagens personalizadas por pacote
+- Contato geral para dúvidas
+- Links automáticos para conversa
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📄 **Geração de PDF**
+- Download completo da tabela de preços
+- Formatação profissional
+- Todas as informações organizadas
+- Ideal para compartilhamento
 
-**Use your preferred IDE**
+### 📱 **Design Responsivo**
+- Otimizado para mobile, tablet e desktop
+- Interface moderna com Tailwind CSS
+- Componentes da shadcn/ui
+- Experiência fluida em todos os dispositivos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠️ Tecnologias Utilizadas
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React** + **TypeScript** - Interface moderna e tipada
+- **Vite** - Build tool ultra-rápido
+- **Tailwind CSS** - Estilização utilitária
+- **shadcn/ui** - Componentes premium
+- **Lucide React** - Ícones modernos
+- **html2pdf** - Geração de PDFs
 
-Follow these steps:
+## 📦 Pacotes Disponíveis
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Pacote | Sessões | Valor Total | Por Sessão | Parcelamento |
+|--------|---------|-------------|------------|--------------|
+| **Aula Avulsa** | 1 | R$ 100 | R$ 100 | PIX ou cartão |
+| **Mensal** | 8 | R$ 520 | R$ 65 | até 3x no cartão |
+| **Trimestral** | 24 | R$ 1.500 | R$ 62,50 | até 8x sem juros |
+| **Semestral** | 48 | R$ 2.880 | R$ 60 | até 10x sem juros |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🚀 Como Usar
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Instalação
+```bash
+# Clone o repositório
+git clone https://github.com/wandersonmk/planoFitiniss.git
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Entre na pasta
+cd planoFitiniss
+
+# Instale as dependências
+npm install
+
+# Execute o projeto
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Configuração do WhatsApp
+⚠️ **IMPORTANTE**: Antes de usar, substitua o número do WhatsApp nos arquivos:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. `src/components/PackageCard.tsx` - linha ~15
+2. `src/components/Footer.tsx` - linha ~9
+3. `src/components/PlanSuggestion.tsx` - linha ~105
+4. `src/components/PlanComparison.tsx` - linha ~107
 
-**Use GitHub Codespaces**
+Substitua `5511999999999` pelo seu número no formato: `55 + DDD + número`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Personalização
+- **Cores**: Modifique as variáveis CSS em `src/index.css`
+- **Planos**: Edite os dados em `src/pages/Index.tsx`
+- **Textos**: Ajuste as mensagens e descrições nos componentes
 
-## What technologies are used for this project?
+## 📂 Estrutura do Projeto
 
-This project is built with:
+```
+src/
+├── components/
+│   ├── ui/                 # Componentes base shadcn/ui
+│   ├── Header.tsx          # Cabeçalho principal
+│   ├── PackageCard.tsx     # Cards dos pacotes
+│   ├── ComparisonTable.tsx # Tabela de resumo
+│   ├── PlanComparison.tsx  # Comparador de planos
+│   ├── PlanSuggestion.tsx  # Avaliação personalizada
+│   ├── DownloadSection.tsx # Seção de download PDF
+│   └── Footer.tsx          # Rodapé com observações
+├── pages/
+│   └── Index.tsx           # Página principal
+├── utils/
+│   └── pdfGenerator.ts     # Geração de PDFs
+└── assets/
+    └── fitness-hero.jpg    # Imagem de fundo
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Componentes Principais
 
-## How can I deploy this project?
+### PackageCard
+Cards responsivos para apresentação individual dos planos com botão WhatsApp integrado.
 
-Simply open [Lovable](https://lovable.dev/projects/aec4de09-80a6-4f93-9900-b0f26bc1a277) and click on Share -> Publish.
+### PlanComparison
+Sistema inteligente de comparação entre dois planos com análise de economia automática.
 
-## Can I connect a custom domain to my Lovable project?
+### PlanSuggestion
+Quiz de 5 perguntas que recomenda o plano ideal baseado no perfil do cliente.
 
-Yes, you can!
+### ComparisonTable
+Tabela completa com todos os planos e informações para comparação rápida.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🌟 Diferenciais
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Interface Profissional**: Design moderno e clean
+- **UX Otimizada**: Fluxo intuitivo de decisão de compra
+- **Conversão Focada**: Múltiplos pontos de contato via WhatsApp
+- **Mobile First**: Experiência perfeita em dispositivos móveis
+- **Performance**: Loading rápido e interações fluidas
+
+## 📱 Preview
+
+O sistema oferece uma experiência completa:
+
+1. **Visualização** dos pacotes disponíveis
+2. **Comparação** direta entre planos
+3. **Avaliação** personalizada com recomendação
+4. **Contato** direto via WhatsApp
+5. **Download** de tabela em PDF
+
+## 🤝 Contribuição
+
+Sinta-se livre para contribuir com melhorias:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Desenvolvido com ❤️ para profissionais de Personal Training que querem otimizar suas vendas e oferecer uma experiência premium aos clientes.
